@@ -20,9 +20,14 @@ from vote_evalu_project import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('project/create/', views.create_project, name='create_project'),
-    path('project/success/', views.project_success, name='project_success'),
+    path('admin/', admin.site.urls),   # 장고 관리자 페이지
+    path('', views.home, name='home'),   # 프로젝트 시작 페이지 - 각종 페이지 연결 버튼 
+    path('project/create/', views.create_project, name='create_project'),   # 프로젝트 생성
+    path('project/success/', views.project_success, name='project_success'),   # 생성 완료 페이지
+    path('projects/', views.project_list, name='project_list'),  # 프로젝트 리스트 URL
+    path('projects/<int:pk>/', views.project_detail, name='project_detail'),  # 특정 ID(pk)를 가진 프로젝트의 상세 페이지를 보여주는 URL 패턴
+    path('projects/sorted/', views.sorted_project_list, name='sorted_project_list'), # 평균 점수 순으로 정렬된 프로젝트 목록
+
    
 
 ]

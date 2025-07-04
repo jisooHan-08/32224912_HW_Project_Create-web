@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>프로젝트 평가 리스트</title>
+</head>
+<body>
+    <h1>프로젝트 평가 리스트</h1>
+    <p>(현재 평가된 프로젝트의 높은 평균순으로 정렬된 상태)</p>
+
+    <ol>
+        {% for project in projects %}
+            <li>
+                <a href="{% url 'project_detail' project.pk %}"><strong>{{ project.title }}</strong></a><br>
+                현재 평가 평균: {% if project.avg_score %}<strong>{{ project.avg_score|floatformat:2 }}</strong>점{% else %}평가 없음{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+
+    <br><br>
+
+    <p>최종 높은 평균점수 순서로 평가된 프로젝트 보러가기!</p>
+    <a href="{% url 'sorted_project_list' %}">http://127.0.0.1:8000/projects/sorted/</a>
+
+    <br><br>
+    <a href="{% url 'home' %}">초기 화면으로 돌아가기!</a>
+
+
+</body>
+</html>

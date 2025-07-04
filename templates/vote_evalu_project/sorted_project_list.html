@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>평균 점수 순 프로젝트 목록</title>
+</head>
+<body>
+    <h1>평균 점수 순 정렬된 프로젝트 목록</h1>
+
+    <ul>
+    {% for project in projects %}
+        <li>
+            <strong>{{ project.title }}</strong><br>
+            설명: {{ project.description }}<br>
+            평균 점수: 
+            {% if project.avg_score %}
+                {{ project.avg_score|floatformat:2 }}점
+            {% else %}
+                아직 평가 없음
+            {% endif %}
+            <br><br>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'project_list' %}">평가 할 프로젝트 목록 보러 가기</a>
+    <br><br>
+    <a href="{% url 'create_project' %}">새 프로젝트 작성하러 가기!</a>
+
+    <br><br>
+    <a href="{% url 'home' %}">초기 화면으로 돌아가기!</a>
+
+
+</body>
+</html>
