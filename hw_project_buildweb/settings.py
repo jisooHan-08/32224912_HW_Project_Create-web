@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'project_vote_db',
         'USER': 'root',
         'PASSWORD': 'Han1804!',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',

@@ -20,6 +20,12 @@
 
     <hr>
 
+
+    {% if voted %}
+        <p><strong>평가(투표)가 완료되었습니다</strong></p>
+        <p>평가(투표)한 점수: {{ user_score }}점</p>
+    {% endif %}
+
     <h3>현재 평균 점수</h3>
     {% if average %}
         <p>{{ average }}점</p>
