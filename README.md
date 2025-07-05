@@ -36,9 +36,9 @@ vote_evalu_project/               # 앱 폴더: 핵심 디렉토리
 templates/vote_evalu_project/     # 템플릿: HTML 파일들
   - home.html                      # 초기화면
   -  create_project.html           # 관리자 등록 페이지
-  -   project_list.html             # 프로젝트 목록
-  -     roject_detail.html           # 평가 상세
-  - sorted_project_list.html      # 평균순 정렬
+  -  project_list.html             # 프로젝트 목록
+  -  project_detail.html           # 평가 상세
+  -  sorted_project_list.html      # 평균순 정렬
   -  project_success.html          # 평가 완료
 
 Dockerfile                        # Django 서버용 Docker 설정
